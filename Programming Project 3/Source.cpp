@@ -1,28 +1,29 @@
-// this is project 1 for the ingredient adjuster
+// this is project 2 for the math tutor
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+
 using namespace std;
 
 int main() {
-    // Ingredient quantities for 48 cookies
-    const double sugarPer48 = 1.5; // cups
-    const double butterPer48 = 1.0; // cups
-    const double flourPer48 = 2.75; // cups
+    // Seed the random number generator
+    srand(time(0));
 
-    // Number of cookies you want to make
-    int desiredCookies;
-    cout << "Enter the number of cookies you want to make: ";
-    cin >> desiredCookies;
+    // Generate two random numbers
+    int num1 = rand() % 1000;// Random number between 0 and 999
+    int num2 = rand() % 1000; // Random number between 0 and 999
 
-    // amounts for the number of cookies you want
-    double sugarNeeded = sugarPer48 * desiredCookies / 48;
-    double butterNeeded = butterPer48 * desiredCookies / 48;
-    double flourNeeded = flourPer48 * desiredCookies / 48;
+    // Display the numbers to be added
+    cout << "Solve the following addition problem:\n";
+    cout << num1 << " + " << num2 << " = ?" << endl;
 
-    // Display the results
-    cout << "To make " << desiredCookies << " cookies, you will need:\n";
-    cout << sugarNeeded << " cups of sugar\n";
-    cout << butterNeeded << " cups of butter\n";
-    cout << flourNeeded << " cups of flour\n";
+    // Pause the screen while the student works on the problem
+    cout << "Press Enter when you're ready to see the answer...";
+    cin.get(); //wait for the person to perss enter
+
+    // Display the correct solution
+    int solution = num1 + num2;
+    cout << num1 << " + " << num2 << " = " << solution << endl;
 
     return 0;
 }
