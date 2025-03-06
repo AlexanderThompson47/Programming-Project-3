@@ -1,29 +1,43 @@
-// this is project 2 for the math tutor
+// this is project 3 for t programming project 3
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <iomanip>
+#include <cmath>
 
 using namespace std;
 
 int main() {
-    // Seed the random number generator
-    srand(time(0));
+    // Declare variables
+    double principal, rate, amount, interest;
+    int timesCompounded;
 
-    // Generate two random numbers
-    int num1 = rand() % 1000;// Random number between 0 and 999
-    int num2 = rand() % 1000; // Random number between 0 and 999
+    // Ask for input from the person
+    cout << "Enter the principal: $";
+    cin >> principal;
 
-    // Display the numbers to be added
-    cout << "Solve the following addition problem:\n";
-    cout << num1 << " + " << num2 << " = ?" << endl;
+    cout << "Enter the annual interest rate (as a percentage): ";
+    cin >> rate;
 
-    // Pause the screen while the student works on the problem
-    cout << "Press Enter when you're ready to see the answer...";
-    cin.get(); //wait for the person to perss enter
+    cout << "Enter the number of times the interest is compounded per year: ";
+    cin >> timesCompounded;
 
-    // Display the correct solution
-    int solution = num1 + num2;
-    cout << num1 << " + " << num2 << " = " << solution << endl;
+    // Convert the interest rate from percentage to decimal
+    rate = rate / 100;
+
+    ;
+
+    // Calculate the amount in savings after one year
+    amount = principal * pow(1 + rate / timesCompounded, timesCompounded);
+
+    // Calculate the interest earned
+    interest = amount - principal;
+
+    // Display the results
+    cout << fixed << setprecision(2);
+    cout << "Interest rate: " << rate * 100 << "%" << endl;
+    cout << "Times compounded: " << timesCompounded << endl;
+    cout << "Principal: $" << principal << endl;
+    cout << "Interest: $" << interest << endl;
+    cout << "Amount in savings: $" << amount << endl;
 
     return 0;
 }
